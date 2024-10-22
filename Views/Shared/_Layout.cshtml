@@ -105,6 +105,27 @@
                             </ul>
                         </li>
                         <li>
+                            <a href="#submenu7" data-bs-toggle="collapse"
+                                class="nav-link px-0 align-middle d-flex text-white">
+                                <span class="material-icons">
+                                    local_cafe
+                                </span>
+                                <span class="ms-1 d-none d-sm-inline">Quản lý công thức</span>
+                            </a>
+                            <ul class="collapse show nav flex-column ms-1" id="submenu7" data-bs-parent="#menu">
+                                <li class="w-100">
+                                    <a asp-controller="CongThuc" asp-action="Create" class="nav-link px-0 text-white">
+                                        <span class="d-none d-sm-inline">--- Thêm công thức</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a asp-controller="CongThuc" asp-action="Index" class="nav-link px-0 text-white">
+                                        <span class="d-none d-sm-inline">--- Hiện dang sách công thức</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
                             <a href="#submenu4" data-bs-toggle="collapse"
                                 class="nav-link px-0 align-middle d-flex text-white">
                                 <span class="material-icons">diversity_3</span>

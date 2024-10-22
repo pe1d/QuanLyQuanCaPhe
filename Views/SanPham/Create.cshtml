@@ -1,6 +1,6 @@
 @model QuanLyQuanCaPhe.Models.SanPhamModel
 
-<h2>Thêm Sản Phẩm</h2>
+<h2>----Thêm Sản Phẩm-----</h2>
 
 <form asp-action="Create" method="post">
     <span class="d-flex flex-row justify-content-between">
@@ -23,7 +23,6 @@
             </select>
             <span asp-validation-for="FK_sMaLSP" class="text-danger"></span>
         </div>
-
     </span>
     <div class="d-flex flex-row justify-content-between mt-3">
         <div class="col-1">
@@ -42,7 +41,6 @@
             <span asp-validation-for="sIMG" class="text-danger"></span>
         </div>
     </div>
-
     <button type="submit" class="btn btn-primary mt-2 mb-2">Thêm</button>
 </form>
 <div>

@@ -72,3 +72,6 @@ D:\Study\HocKyI-Nam2024-2025\CNPM\BTL\Code\QuanLyQuanCaPhe\bin\Debug\net5.0\runt
 D:\Study\HocKyI-Nam2024-2025\CNPM\BTL\Code\QuanLyQuanCaPhe\obj\Debug\net5.0\Razor\Views\SanPham\Index.cshtml.g.cs
 D:\Study\HocKyI-Nam2024-2025\CNPM\BTL\Code\QuanLyQuanCaPhe\obj\Debug\net5.0\Razor\Views\SanPham\Create.cshtml.g.cs
 D:\Study\HocKyI-Nam2024-2025\CNPM\BTL\Code\QuanLyQuanCaPhe\obj\Debug\net5.0\Razor\Views\NhaCungCap\Index.cshtml.g.cs
+D:\Study\HocKyI-Nam2024-2025\CNPM\BTL\Code\QuanLyQuanCaPhe\obj\Debug\net5.0\Razor\Views\CongThuc\Create.cshtml.g.cs
+D:\Study\HocKyI-Nam2024-2025\CNPM\BTL\Code\QuanLyQuanCaPhe\obj\Debug\net5.0\Razor\Views\CongThuc\Index.cshtml.g.cs
+D:\Study\HocKyI-Nam2024-2025\CNPM\BTL\Code\QuanLyQuanCaPhe\obj\Debug\net5.0\Razor\Views\CongThuc\_ViewCongThuc.cshtml.g.cs

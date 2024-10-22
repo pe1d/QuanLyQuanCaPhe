@@ -20,10 +20,18 @@ namespace QuanLyQuanCaPhe.Data
             modelBuilder.Entity<LoaiSanPhamModel>()
                 .HasKey(p => p.PK_sMaLSP);
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<NguyenLieuModel>()
+                .HasKey(p => p.PK_sMaNL);
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<CongThucModel>()
+                .HasKey(p => p.FK_sMaNL);
+            base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<SanPhamModel> tbl_SanPham { get; set; }
         public DbSet<NhaCungCapModel> tbl_NhaCungCap { get; set; }
         public DbSet<LoaiSanPhamModel> tbl_LoaiSanPham { get; set; }
+        public DbSet<NguyenLieuModel> tbl_NguyenLieu { get; set; }
+        public DbSet<CongThucModel> tbl_CongThuc { get; set; }
     }
 }

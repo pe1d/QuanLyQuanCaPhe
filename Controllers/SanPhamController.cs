@@ -32,6 +32,7 @@ namespace QuanLyQuanCaPhe.Controllers
             //Console.WriteLine("Check: ");
             ViewBag.NhaCungCap = new SelectList(ncc, "PK_sMaNCC", "sTenNCC");
             ViewBag.LoaiSanPham = new SelectList(await _context.tbl_LoaiSanPham.ToListAsync(), "PK_sMaLSP", "sTenLoaiSanPham");
+            ViewBag.NguyenLieu = new SelectList(await _context.tbl_NguyenLieu.ToListAsync(), "PK_sMaNL", "sTenNL");
             return View();
         }
 
