@@ -32,7 +32,8 @@
                     </div>
                     <div class="col-3">
                         <label asp-for="FK_sMaNL">Nguyên liệu</label>
-                        <select asp-for="FK_sMaNL" class="form-control" asp-items="ViewBag.NguyenLieu">
+                        <select asp-for="FK_sMaNL" class="form-control"
+                            asp-items="@(new SelectList(ViewBag.NguyenLieu,"PK_sMaNL", "sTenNL"))">
                             <option value="">Chọn loại nguyên liệu</option>
                         </select>
                         <span asp-validation-for="FK_sMaNL" class="text-danger"></span>
@@ -85,7 +86,6 @@ else
                         if (nl.PK_sMaNL == ct.FK_sMaNL)
                         {
                             @nl.sTenNL
-                            ;
                             break;
                         }
                     }

@@ -31,8 +31,9 @@ namespace QuanLyQuanCaPhe.Controllers
         {
             var ncc = await _context.tbl_NhaCungCap.ToListAsync();
             //Console.WriteLine("Check: ");
-            ViewBag.NguyenLieu = new SelectList(await _context.tbl_NguyenLieu.ToListAsync(), "PK_sMaNL", "sTenNL");
+            ViewBag.NguyenLieu = await _context.tbl_NguyenLieu.ToListAsync();
             ViewBag.SanPham = await _context.tbl_SanPham.ToListAsync();
+            ViewBag.NhaCungCap = await _context.tbl_NhaCungCap.ToListAsync();
             if (!string.IsNullOrEmpty(maSP))
             {
                 ViewBag.CongThuc = await _context.tbl_CongThuc.Where(p => p.FK_sMaSP == maSP).ToListAsync();
@@ -55,6 +56,7 @@ namespace QuanLyQuanCaPhe.Controllers
             {
                 var CongThuc = new CongThucModel
                 {
+                    PK_sMaCT = "CT" + DateTime.Now.ToString("yyyyMMddHHmmss"),
                     FK_sMaNL = model.FK_sMaNL,
                     FK_sMaSP = model.FK_sMaSP,
                     fKhoiLuong = model.fKhoiLuong,
@@ -62,6 +64,7 @@ namespace QuanLyQuanCaPhe.Controllers
 
                 _context.tbl_CongThuc.Add(CongThuc);
                 _context.SaveChanges();
+                return RedirectToAction(nameof(Create), new { maSP = model.FK_sMaSP });
             }
             return View();
         }
