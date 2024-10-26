@@ -91,7 +91,7 @@
                                 </span>
                                 <span class="ms-1 d-none d-sm-inline">Quản lý sản phẩm</span>
                             </a>
-                            <ul class="collapse show nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
+                            <ul class="collapse nav flex-column ms-1" id="submenu3" data-bs-parent="#menu">
                                 <li class="w-100">
                                     <a asp-controller="SanPham" asp-action="Create" class="nav-link px-0 text-white">
                                         <span class="d-none d-sm-inline">--- Thêm sản phẩm</span>
@@ -112,7 +112,7 @@
                                 </span>
                                 <span class="ms-1 d-none d-sm-inline">Quản lý công thức</span>
                             </a>
-                            <ul class="collapse show nav flex-column ms-1" id="submenu7" data-bs-parent="#menu">
+                            <ul class="collapse nav flex-column ms-1" id="submenu7" data-bs-parent="#menu">
                                 <li class="w-100">
                                     <a asp-controller="CongThuc" asp-action="Create" class="nav-link px-0 text-white">
                                         <span class="d-none d-sm-inline">--- Thêm công thức</span>
@@ -157,7 +157,7 @@
                             </a>
                             <ul class="collapse nav flex-column ms-1" id="submenu5" data-bs-parent="#menu">
                                 <li class="w-100">
-                                    <a href="#" class="nav-link px-0 text-white">
+                                    <a asp-action="Index" asp-controller="KhachHang" class="nav-link px-0 text-white">
                                         <span class="d-none d-sm-inline">--- Thêm khách hàng</span>
                                     </a>
                                 </li>
@@ -176,22 +176,17 @@
                             </a>
                             <ul class="collapse nav flex-column ms-1" id="submenu6" data-bs-parent="#menu">
                                 <li class="w-100">
-                                    <a href="#" class="nav-link px-0 text-white">
+                                    <a asp-controller="Hoadon" asp-action="Create" class="nav-link px-0 text-white">
                                         <span class="d-none d-sm-inline">--- Thêm hóa đơn</span>
                                     </a>
                                 </li>
                                 <li class="w-100">
-                                    <a href="#" class="nav-link px-0 text-white">
-                                        <span class="d-none d-sm-inline">--- Sửa hóa đơn</span>
+                                    <a asp-controller="Hoadon" asp-action="Index" class="nav-link px-0 text-white">
+                                        <span class="d-none d-sm-inline">--- Danh sách hóa đơn</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" class="nav-link px-0 text-white">
-                                        <span class="d-none d-sm-inline">--- Xóa hóa đơn</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="nav-link px-0 text-white">
+                                    <a asp-controller="BaoCao" asp-action="DoanhThu" class="nav-link px-0 text-white">
                                         <span class="d-none d-sm-inline">--- Báo cáo doanh thu</span>
                                     </a>
                                 </li>

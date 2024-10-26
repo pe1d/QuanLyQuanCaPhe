@@ -24,7 +24,16 @@ namespace QuanLyQuanCaPhe.Data
                 .HasKey(p => p.PK_sMaNL);
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<CongThucModel>()
-                .HasKey(p => p.FK_sMaNL);
+                .HasKey(p => p.PK_sMaCT);
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<HoaDonModel>()
+                .HasKey(p => p.PK_sMaHD);
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<HoaDonSanPhamModel>()
+                .HasKey(p => p.PK_sMaHDSP);
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<KhachHangModel>()
+                .HasKey(p => p.PK_sMaKH);
             base.OnModelCreating(modelBuilder);
         }
 
@@ -33,5 +42,8 @@ namespace QuanLyQuanCaPhe.Data
         public DbSet<LoaiSanPhamModel> tbl_LoaiSanPham { get; set; }
         public DbSet<NguyenLieuModel> tbl_NguyenLieu { get; set; }
         public DbSet<CongThucModel> tbl_CongThuc { get; set; }
+        public DbSet<KhachHangModel> tbl_KhachHang { get; set; }
+        public DbSet<HoaDonModel> tbl_HoaDonBanHang { get; set; }
+        public DbSet<HoaDonSanPhamModel> tbl_HoaDon_SanPham { get; set; }
     }
 }

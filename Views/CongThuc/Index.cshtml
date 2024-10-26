@@ -25,7 +25,7 @@
     <tbody>
         @foreach (var ct in Model)
         {
-            <tr>
+            <tr id="@ct.PK_sMaCT">
                 <td>
                     @foreach (var sp in ViewBag.SanPham)
                     {
@@ -76,9 +76,36 @@
                     }
                 </td>
                 <td>
-                    <button type="button" class="btn btn-danger">Xóa</button>
+                    <button type="button" onclick="deleteCongThuc(event, '@ct.PK_sMaCT')"
+                        class="btn btn-danger">Xóa</button>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+<script>
+    async function deleteCongThuc(event, idDelete) {
+        event.preventDefault();
+        console.log("Check: ", idDelete)
+        try {
+            const response = await fetch(`/CongThuc/Delete`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id: idDelete })
+            });
+
+            const data = await response.json();
+            console.log("Check data: ", data)
+            if (data.success) {
+                document.getElementById(`${idDelete}`).remove();
+                alert(data.message)
+            } else {
+                alert('Error deleting product');
+            }
+        } catch (error) {
+            console.error('Error 123:', error);
+        }
+    }
+</script>

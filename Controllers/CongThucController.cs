@@ -7,6 +7,7 @@ using QuanLyQuanCaPhe.Data;
 using QuanLyQuanCaPhe.Models;
 using System;
 using System.Linq;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace QuanLyQuanCaPhe.Controllers
@@ -68,21 +69,22 @@ namespace QuanLyQuanCaPhe.Controllers
             }
             return View();
         }
-        public IActionResult Delete(string id)
+        [HttpPost]
+        [IgnoreAntiforgeryToken]
+        public async Task<IActionResult> Delete([FromBody] JsonElement data)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
 
-            var sanPham = _context.tbl_SanPham
-                .FirstOrDefault(m => m.PK_sMaSP == id);
-            if (sanPham == null)
+            string id = data.GetProperty("id").GetString();
+            Console.WriteLine("Check id: " + id);
+            var ct = await _context.tbl_CongThuc.FirstOrDefaultAsync(ct => ct.PK_sMaCT == id);
+            Console.WriteLine("Check ct: " + ct);
+            if (ct == null)
             {
-                return NotFound();
+                return Json(new { success = false, message = "Error deleting" });
             }
-
-            return View(sanPham);
+            _context.tbl_CongThuc.Remove(ct);
+            await _context.SaveChangesAsync();
+            return Json(new { success = true, message = "Product deleted successfully" });
         }
 
         public async Task<IActionResult> Index(string maSP)
